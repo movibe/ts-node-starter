@@ -37,7 +37,6 @@
   "dependencies": {
     "@types/dotenv": "^4.0.1",
     "@types/jest": "^21.1.0",
-    "@types/locutus": "^0.0.5",
     "@types/lodash": "^4.14.74",
     "@types/node": "^8.0.30",
     "concurrently": "^3.5.0",
