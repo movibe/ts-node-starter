@@ -2,18 +2,28 @@
   "name": "typescript-node-starter",
   "version": "1.0.0",
   "description": "Typescript NodeJS Starter",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "scripts": {
-    "start": "npm run build && npm run watch",
-    "build": "npm run build-ts && npm run tslint ",
-    "serve": "nodemon dist/index.js",
-    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve\"",
-    "test": "jest --forceExit",
-    "build-ts": "tsc",
-    "watch-ts": "tsc -w",
-    "tslint": "tslint -c tslint.json -p tsconfig.json",
-    "debug": "npm run build && npm run watch-debug",
-    "serve-debug": "nodemon --inspect dist/server.js",
-    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\"  \"npm run watch-ts\" \"npm run serve-debug\""
+    "start": "ts-node index.ts",
+    "dev": "nodemon --exec 'ts-node --cache-directory .tscache' index.ts"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "lodash": "^4.17.4",
+    "nodemon": "^1.12.1",
+    "ts-node": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^4.0.1",
+    "@types/jest": "^21.1.0",
+    "@types/lodash": "^4.14.74",
+    "@types/node": "^8.0.30",
+    "jest": "^21.1.0",
+    "ts-jest": "^21.0.1",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.2"
   },
   "jest": {
     "globals": {
@@ -30,22 +40,5 @@
       "**/test/**/*.test.(ts|js)"
     ],
     "testEnvironment": "node"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@types/dotenv": "^4.0.1",
-    "@types/jest": "^21.1.0",
-    "@types/lodash": "^4.14.74",
-    "@types/node": "^8.0.30",
-    "concurrently": "^3.5.0",
-    "dotenv": "^4.0.0",
-    "jest": "^21.1.0",
-    "lodash": "^4.17.4",
-    "nodemon": "^1.12.1",
-    "ts-jest": "^21.0.1",
-    "tslint": "^5.7.0",
-    "typescript": "^2.5.2"
   }
 }
